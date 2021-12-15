@@ -8,3 +8,4 @@ const host = process.env.HOST ? process.env.HOST : "localhost";
 const port = process.env.PORT ? parseInt(process.env.PORT) : 3001;
 const server = new cors_proxy_1.default();
 server.start(host, port);
+//# sourceMappingURL=app.js.map
