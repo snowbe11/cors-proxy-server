@@ -39,7 +39,7 @@ export class ProxyServer {
     });
   }
 
-  start = (host: string, port = 8080) => {
+  start = (host: string, port: number) => {
     if (this.proxy) {
       this.proxy.listen(port, host, function () {
         console.log("Running CORS Anywhere on " + host + ":" + port);

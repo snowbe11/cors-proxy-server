@@ -1,7 +1,7 @@
 import ProxyServer from "./cors-proxy";
 
-const host = process.env.HOST ? process.env.HOST : "localhost";
-const port = process.env.PORT ? parseInt(process.env.PORT) : 3001;
+const host = process.env.HOST || "0.0.0.0";
+const port = process.env.PORT || "3001";
 
 const server = new ProxyServer();
-server.start(host, port);
+server.start(host, parseInt(port));

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProxyServer = void 0;
 class ProxyServer {
     constructor() {
-        this.start = (host, port = 8080) => {
+        this.start = (host, port) => {
             if (this.proxy) {
                 this.proxy.listen(port, host, function () {
                     console.log("Running CORS Anywhere on " + host + ":" + port);
