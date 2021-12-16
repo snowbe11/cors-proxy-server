@@ -11,12 +11,14 @@ export class ProxyServer {
     this.originBlacklist = this.parseEnvList("");
     this.originWhitelist = this.parseEnvList("");
 
+    const checkRateLimit = require("./lib/rate-limit")();
+
     const cors_proxy = require("./lib/cors-anywhere");
     this.proxy = cors_proxy.createServer({
       originBlacklist: this.originBlacklist,
       originWhitelist: this.originWhitelist,
       requireHeader: ["origin", "x-requested-with"],
-      checkRateLimit: {},
+      checkRateLimit: checkRateLimit,
       removeHeaders: [
         "cookie",
         "cookie2",
